@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -11,16 +11,15 @@ jobs:
       matrix:
         os: [ubuntu-latest, macis-latest, windows-latest]
         python-version:
+          - "3.7"
           - "3.8"
           - "3.9"
           - "3.10"
           - "3.11"
-          - "3.12"
+          - "3.12-dev"
+          - "pypy-3.7"
           - "pypy-3.8"
           - "pypy-3.9"
-          - "pypy-3.10"
-          - "pypy-3.11"
-          - "pypy-3.12"
 
     name: Test
     runs-on: ${{ matrix.os }}
